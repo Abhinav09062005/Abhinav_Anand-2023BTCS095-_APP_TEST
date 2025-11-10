@@ -32,21 +32,21 @@ export default function Playlist() {
   ];
 
   const doctorPlaylists = [
-    { id: 1, title: "Chronic Pain", episodes: 8 },
-    { id: 2, title: "Mindfulness for Sleep", episodes: 8 },
-    { id: 3, title: "Healthy Heart Basics", episodes: 12 },
+    {id:1,title:"Chronic Pain",episodes:8},
+    {id:2,title:"Mindfulness for Sleep",episodes:8},
+    { id:3,title:"Healthy Heart Basics",episodes:12},
   ];
 
-  return (
+  return(
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
-      <Header />
+      <Header/>
 
       <Text style={styles.heading}>Playlists</Text>
-      <Text style={styles.subheading}>
-        Personalized audio-care plans, curated by you
-      </Text>
+      <Text style={styles.subheading}>Personalized audio-care plans, curated by you</Text>
 
       <SearchBar placeholder="Search for name, symptom or condition..." />
+
+
 
       <View style={styles.sectionHeader}>
         <Text style={styles.sectionTitle}>My Playlists (10)</Text>
@@ -54,6 +54,9 @@ export default function Playlist() {
           <Text style={styles.seeAll}>See all</Text>
         </TouchableOpacity>
       </View>
+
+
+
 
       <ScrollView
         horizontal
@@ -64,21 +67,26 @@ export default function Playlist() {
           <PlaylistCard key={item.id} {...item} />
         ))}
       </ScrollView>
+   
+
+
+
 
       <TouchableOpacity style={styles.createButton}>
         <Text style={styles.createButtonText}> + Create new custom playlist</Text>
       </TouchableOpacity>
 
-      {/* Doctor-Curated Section */}
       <View style={styles.sectionHeader}>
-        <Text style={styles.sectionTitle}>Doctor-Curated Playlists (12)</Text>
+            <Text style={styles.sectionTitle}>Doctor-Curated Playlists(12)</Text>
         <TouchableOpacity>
           <Text style={styles.seeAll}>See all</Text>
         </TouchableOpacity>
       </View>
 
+
+
       <View style={styles.curatedList}>
-        {doctorPlaylists.map((item) => (
+          {doctorPlaylists.map((item) => (
           <CuratedListItem key={item.id} {...item} />
         ))}
       </View>
